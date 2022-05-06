@@ -1,6 +1,8 @@
 const header = document.querySelector('header');
 const body = document.querySelector('body');
 
+onScroll();
+
 function toggleMenu() {
   body.classList.toggle('openedMenu');
 }

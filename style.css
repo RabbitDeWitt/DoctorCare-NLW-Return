@@ -29,11 +29,12 @@
 
 html, body{
   width: 100%;
-  
+  scroll-behavior: smooth;
 }
 
 body{
   overflow: overlay;
+  background: var(--gelo);
 }
 
 main{
@@ -102,6 +103,14 @@ button.btn-whatsapp img{
 
 button.btn-whatsapp:hover{
   background: var(--brand-houver);
+}
+
+div.social-media{
+  width: 13.6rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* HEADER */
@@ -199,14 +208,6 @@ body.openedMenu header div#menu-mobile button:hover{
   border: 1px solid var(--white);
 }
 
-body.openedMenu header div#menu-mobile div#social-media{
-  width: 13.6rem;
-  height: 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 body.openedMenu header div#cabecalho a svg path{
   fill: var(--white);
 }
@@ -294,11 +295,12 @@ section#servicos::before{
 }
 
 section#servicos{
+  width: 100%;
+  height: 203.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 section#servicos h4{
   margin: 10rem 0 1.6rem 0;
@@ -329,3 +331,105 @@ section#servicos div.container div.servico p{
   line-height: 2.4rem;
 }
 
+/* SEÇÃO SOBRE */
+
+section#sobre{
+  background: var(--brand-beige);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding-block: 10rem;
+}
+
+section#sobre div.texto{
+  margin-bottom: 6rem;
+  width: 32.8rem;
+  height: 42.7rem;
+  text-align: left;
+
+}
+
+section#sobre div.texto h4{
+  margin-bottom: 1.6rem;
+}
+
+section#sobre div.texto h2{
+  text-align: left;
+}
+
+section#sobre div.texto p{
+  margin-top: 2.4rem;
+  font-size: 1.6rem;
+}
+
+section#sobre img{
+  height: 28.2rem;
+  width: 32.7rem;
+}
+
+/* SEÇÃO CONTATO */
+
+section#contato{
+  padding-block: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section#contato div.info{
+    height: 26.2rem;
+    width: 29.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 6rem;
+}
+
+section#contato div.info h2{
+  text-align: left;
+  margin-bottom: 3.2rem;
+}
+
+section#contato div.info p{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+section#contato div.info p:nth-child(3){
+  margin: 1.6rem 0 3.2rem 0;
+}
+
+section#contato img:nth-child(2){
+  height: 21.3rem;
+  width: 32.4rem;
+}
+
+/* FOOTER */
+
+footer{
+  background: var(--brand-blue);
+  height: 28.5rem;
+  width: 100%;
+  padding: 6rem 0 6rem 2.4rem;
+  
+}
+
+footer p{
+  color: var(--white);
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+}
+
+footer div#credito{
+  height: 10.9rem;
+  width: 23.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 3.2rem;
+}
+
+footer div#credito img{
+  margin-bottom: 2.4rem;
+}
