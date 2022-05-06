@@ -1,11 +1,11 @@
 const header = document.querySelector('header');
-
+const body = document.querySelector('body');
 
 function toggleMenu() {
-  header.classList.toggle('open');
+  body.classList.toggle('openedMenu');
 }
 
-function onScroll() {
+function onScroll() {  
   if(scrollY>0){
     header.classList.add('scrolled');
   }else{

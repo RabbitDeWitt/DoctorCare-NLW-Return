@@ -29,6 +29,11 @@
 
 html, body{
   width: 100%;
+  
+}
+
+body{
+  overflow: overlay;
 }
 
 main{
@@ -42,10 +47,17 @@ h1{
   margin: 1.6rem 0 2.4rem 0;
 }
 
-p{
-  color: var(--gray-paragraph);
-  font-size: 18px;
-  line-height: 2.7rem;
+h2{
+  color: var(--gray-headline);
+  font-size: 3rem;
+  line-height: 3.9rem;
+  text-align: center;
+}
+
+h3{
+  color: var(--gray-headline);
+  font-size: 4.8rem;
+  line-height: 6.2rem;
 }
 
 h4{
@@ -53,6 +65,19 @@ h4{
   font-size: 1.4rem;
   line-height: 2.1rem;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h5{
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+  padding-block: 1.6rem;
+}
+
+p{
+  color: var(--gray-paragraph);
+  font-size: 18px;
+  line-height: 2.7rem;
 }
 
 button.btn-whatsapp{
@@ -122,20 +147,23 @@ header.scrolled div#cabecalho button svg path{
 
 /* MENU MOBILE */
 
-header.open{
-  background: var(--brand-blue);
+body.openedMenu{
   overflow: hidden;
+}
+
+body.openedMenu header{
+  background: var(--brand-blue);
   height: 100%;
   transition: 0.25s;
 }
 
-header.open div#menu-mobile{
+body.openedMenu header div#menu-mobile{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-header.open div#menu-mobile nav{
+body.openedMenu header div#menu-mobile nav{
   display: flex;
   margin: 6rem 0 4.8rem 0;
   flex-direction: column;
@@ -143,14 +171,14 @@ header.open div#menu-mobile nav{
   gap: 4.8rem;
 }
 
-header.open div#menu-mobile nav a{
+body.openedMenu header div#menu-mobile nav a{
   color: var(--white);
   font-weight: bold;
   font-size: 2.4rem;
   line-height: 3.1rem;
 }
 
-header.open div#menu-mobile button{
+body.openedMenu header div#menu-mobile button{
   width: 27.4rem;
   height: 5.5rem;
   margin-bottom: 8rem;
@@ -165,13 +193,13 @@ header.open div#menu-mobile button{
   transition: 0.25s;
 }
 
-header.open div#menu-mobile button:hover{
+body.openedMenu header div#menu-mobile button:hover{
   background: transparent;
   color: var(--white);
   border: 1px solid var(--white);
 }
 
-header.open div#menu-mobile div#social-media{
+body.openedMenu header div#menu-mobile div#social-media{
   width: 13.6rem;
   height: 2.4rem;
   display: flex;
@@ -179,22 +207,30 @@ header.open div#menu-mobile div#social-media{
   justify-content: space-between;
 }
 
-header.open div#cabecalho a svg path{
+body.openedMenu header div#cabecalho a svg path{
   fill: var(--white);
 }
 
-header.open div#cabecalho button svg{
+body.openedMenu header div#cabecalho button svg{
   visibility: hidden;
 }
 
-header.open div#cabecalho button{
+body.openedMenu header div#cabecalho button{
   background-image: url(assets/icons/close.svg);
 }
 
 /* SEÇÃO INICIO */
 
+section#inicio::before{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: var(--brand-blue-light);
+  width: 100%;
+  height: 108rem;
+}
+
 section#inicio{
-  background: var(--brand-blue-light);  
   display: flex;
   flex-direction: column;
   align-items: center;  
@@ -223,3 +259,73 @@ section#inicio div.foto img{
   height: 100%;
   object-position: 0 2rem;
 }
+
+/* ESTATISTICAS */
+
+div#stats{
+  width: 32.7rem;
+  height: 47rem;
+  background: var(--brand-beige);
+  margin-inline: auto;
+  padding: 4rem 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid var(--brand-blue-light);
+}
+
+div#stats p{
+  color: var(--brand-blue);
+  font-size: 1.6rem;
+}
+
+/* SEÇÃO SERVIÇOS */
+
+section#servicos::before{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background: var(--gelo);
+  width: 100%;
+  height: 203.4rem;
+}
+
+section#servicos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+section#servicos h4{
+  margin: 10rem 0 1.6rem 0;
+}
+
+section#servicos h2{
+  width: 31.4rem;
+  margin-bottom: 6rem;
+}
+
+section#servicos div.container{
+  width: 32.7rem;
+  height: 140.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+section#servicos div.container div.servico{
+  background: var(--white);
+  border: 1px solid var(--brand-blue-light);
+  border-radius: 5px;
+  padding: 2.4rem;
+}
+
+section#servicos div.container div.servico p{
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
