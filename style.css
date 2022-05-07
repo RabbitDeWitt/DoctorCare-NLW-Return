@@ -37,10 +37,6 @@ body{
   background: var(--gelo);
 }
 
-main{
-  margin-top: var(--height-header);
-}
-
 h1{
   color: var(--gray-headline);
   font-size: 3.4rem;
@@ -121,6 +117,7 @@ header{
   top: 0;
   width: 100%;
   transition: 0.25s;
+  z-index: 100;
 }
 
 header div#cabecalho{
@@ -138,7 +135,7 @@ header div#cabecalho button.btn-menu{
 }
 
 header div#menu-mobile{
-  display: none;
+  display: none; 
 }
 
 header.scrolled{
@@ -158,6 +155,7 @@ header.scrolled div#cabecalho button svg path{
 
 body.openedMenu{
   overflow: hidden;
+
 }
 
 body.openedMenu header{
@@ -235,6 +233,7 @@ section#inicio{
   display: flex;
   flex-direction: column;
   align-items: center;  
+  padding-top: var(--height-header);
 }
 
 section#inicio div.conteudo{
@@ -432,4 +431,16 @@ footer div#credito{
 
 footer div#credito img{
   margin-bottom: 2.4rem;
+}
+
+#backToTopBtn{
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 3.5rem;
+  transition: 0.25s;
+}
+
+#backToTopBtn.show{
+  display: block;
 }
