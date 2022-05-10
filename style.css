@@ -37,6 +37,14 @@ body{
   background: var(--gelo);
 }
 
+#nav-desktop{
+  display: none;
+}
+
+button#btn-desktop{
+  display: none;
+}
+
 h1{
   color: var(--gray-headline);
   font-size: 3.4rem;
@@ -73,7 +81,7 @@ h5{
 
 p{
   color: var(--gray-paragraph);
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 2.7rem;
 }
 
@@ -124,7 +132,11 @@ header div#cabecalho{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.6rem 2.4rem;
+  padding-inline: 2.4rem;
+}
+
+header div#cabecalho a svg{
+ margin-block: 2.7rem;
 }
 
 header div#cabecalho button.btn-menu{
@@ -290,12 +302,12 @@ section#servicos::before{
   z-index: -1;
   background: var(--gelo);
   width: 100%;
-  height: 203.4rem;
+  height: calc(203.4rem - var(--height-header));
 }
 
 section#servicos{
   width: 100%;
-  height: 203.4rem;
+  height: calc(203.4rem - var(--height-header));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -319,6 +331,8 @@ section#servicos div.container{
 }
 
 section#servicos div.container div.servico{
+  width: 33.3rem;
+  height: 20.7rem;
   background: var(--white);
   border: 1px solid var(--brand-blue-light);
   border-radius: 5px;
@@ -443,4 +457,211 @@ footer div#credito img{
 
 #backToTopBtn.show{
   display: block;
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px){
+
+h1{
+  font-size: 5.2rem;
+  line-height: 6.8rem;
+}
+
+/* HEADER */
+
+
+  header div#cabecalho button.btn-menu{
+    display: none;
+  }
+
+  header div#cabecalho{
+    padding-inline: 12.4rem;
+  }
+
+  header div#cabecalho nav#nav-desktop{
+    display: flex;
+  }
+
+  header div#cabecalho button#btn-desktop{
+    width: 19rem;
+    height: 3.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--brand-blue);
+    border-radius: 40px;
+    color: var(--brand-blue);
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  header div#cabecalho button#btn-desktop:hover{
+    background: var(--brand-blue);
+    color: var(--white);
+    border: none;
+  }
+  
+  header div#cabecalho nav#nav-desktop{
+    width: 35rem;
+    height: 4.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header div#cabecalho nav#nav-desktop a{
+    color: var(--brand-blue);
+    line-height: 2.1rem;
+    font-size: 1.6rem;
+    opacity: 0.7;
+    transition: 0.4s;
+  }
+
+  header div#cabecalho nav#nav-desktop a:hover{
+    opacity: 1;
+    font-weight: bold;
+  }
+
+  header.scrolled div#cabecalho nav#nav-desktop a{
+    color: var(--brand-blue-light);
+  }
+
+  header.scrolled div#cabecalho button#btn-desktop{
+    border: 1px solid var(--white);
+    color: var(--white);
+  }
+
+  header.scrolled div#cabecalho button#btn-desktop:hover{
+    background: var(--white);
+    color: var(--brand-blue);
+    border: none;
+  }
+
+  /* SEÇÃO INICIO */
+
+  section#inicio::before{
+    height: calc(67.8rem + var(--height-header));
+  }
+
+  section#inicio{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  section#inicio div.conteudo{
+    width: 60.5rem;
+    height: 33.5rem;
+    margin: 8rem 5.1rem 8.4rem 0;
+    align-items: flex-start;
+    text-align: left;
+    
+  }
+
+  section#inicio div.foto{
+    width: 42rem;
+    height: 54.7rem;
+  }
+
+  /* ESTATISTICAS */
+  div#stats{
+    width: 112rem;
+    height: 21rem;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* SEÇÃO SERVIÇOS */
+  
+  section#servicos::before{
+    height: calc(108.2rem - var(--height-header));
+  }
+
+  section#servicos{
+    height: calc(108.2rem - var(--height-header));
+  }
+
+  section#servicos h4{
+    margin-top: 16rem;
+  }
+
+  section#servicos h2{
+    width: 49.7rem;
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
+
+  section#servicos div.container{
+    width: 112.1rem;
+    height: 45.4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16rem;
+  }
+
+  section#servicos div.container div.servico{
+      width: 34.7rem;
+  }
+
+/* SEÇÃO SOBRE */
+
+  section#sobre{
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  section#sobre img{
+    width: 48rem;
+    height: 41.4rem;
+  }
+
+  section#sobre div.texto{
+    width: 57.3rem;
+    height: 32.7rem;
+    margin-left: 6.7rem;
+  }
+
+  section#sobre div.texto h2{
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
+
+/* SEÇÃO CONTATO */
+
+section#contato{
+  flex-direction: row;
+  justify-content: center;
+}
+
+section#contato div.info{
+  width: 40.4rem;
+  height: 30.4rem;
+  margin-right: 14.1rem;
+}
+
+section#contato div.info h2{
+  font-size: 4rem;
+  line-height: 5.2rem;
+}
+
+section#contato img:nth-child(2){
+  width: 57.5rem;
+  height: 37.9rem;
+}
+
+/* FOOTER */
+
+footer{
+ padding-inline: 12.3rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
 }
