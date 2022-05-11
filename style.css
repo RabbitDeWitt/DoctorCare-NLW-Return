@@ -197,6 +197,19 @@ body.openedMenu header div#menu-mobile nav a{
   line-height: 3.1rem;
 }
 
+body.openedMenu header div#menu-mobile nav a::after{
+  content: '';
+  display: block;
+  width: 0%;
+  background: var(--brand-blue-light);
+  height: 2px;
+  transition: 0.25s;
+}
+
+body.openedMenu header div#menu-mobile nav a:hover:after{
+  width: 100%;
+}
+
 body.openedMenu header div#menu-mobile button{
   width: 27.4rem;
   height: 5.5rem;
@@ -273,6 +286,10 @@ section#inicio div.foto img{
 }
 
 /* ESTATISTICAS */
+
+div#stats img{
+  display: none;
+}
 
 div#stats{
   width: 32.7rem;
@@ -483,6 +500,28 @@ h1{
     display: flex;
   }
 
+  
+  header div#cabecalho nav#nav-desktop a{
+    width: 20%;
+    text-align: center;
+  }
+
+  header div#cabecalho nav#nav-desktop a::after{
+    content: '';
+    display: block;
+    position: relative;
+    bottom: -2rem;
+    width: 0%;
+    background: var(--brand-blue);
+    height: 2px;
+    transition: 0.25s;
+  }
+
+  header div#cabecalho nav#nav-desktop a.active::after,
+  header div#cabecalho nav#nav-desktop a:hover::after{
+    width: 100%;
+  }
+
   header div#cabecalho button#btn-desktop{
     width: 19rem;
     height: 3.8rem;
@@ -521,6 +560,8 @@ h1{
     transition: 0.4s;
   }
 
+  header div#cabecalho nav#nav-desktop a.active,
+  header.scrolled div#cabecalho nav#nav-desktop a.active,
   header div#cabecalho nav#nav-desktop a:hover{
     opacity: 1;
     font-weight: bold;
@@ -528,6 +569,24 @@ h1{
 
   header.scrolled div#cabecalho nav#nav-desktop a{
     color: var(--brand-blue-light);
+  }
+
+  
+  header.scrolled div#cabecalho nav#nav-desktop a::after{
+    content: '';
+    display: block;
+    position: relative;
+    bottom: -2.6rem;
+    width: 0%;
+    background: var(--brand-blue-light);
+    height: 2px;
+    transition: 0.25s;
+  }
+
+  header.scrolled div#cabecalho nav#nav-desktop a.active::after,
+  header.scrolled div#cabecalho nav#nav-desktop a:hover::after{
+    background-color: var(--brand-blue-light);
+    width: 100%;
   }
 
   header.scrolled div#cabecalho button#btn-desktop{
@@ -569,6 +628,11 @@ h1{
   }
 
   /* ESTATISTICAS */
+
+  div#stats img{
+    display: block;
+  }
+
   div#stats{
     width: 112rem;
     height: 21rem;

@@ -3,9 +3,30 @@ window.addEventListener('scroll', onScroll);
 const header = document.querySelector('header');
 const body = document.querySelector('body');
 var openedMenu = false;
-
-
 onScroll();
+
+function onScroll() {  
+  headerOnScroll();
+  showBackToTopBtn();
+  activeMenuAtCurrentSection(inicio);
+  activeMenuAtCurrentSection(servicos);
+  activeMenuAtCurrentSection(sobre);
+  activeMenuAtCurrentSection(contato);
+}
+
+
+function activeMenuAtCurrentSection(section) {
+  const targetLine = scrollY + innerHeight / 2;
+  const startOfSection = section.offsetTop;
+  const endOfSection = section.offsetTop + section.offsetHeight;
+  const sectionId = section.getAttribute('id');
+  const menuElement = document.querySelector(`#nav-desktop a[href*=${sectionId}]`);
+  
+  menuElement.classList.remove('active');
+  if(targetLine <= endOfSection && targetLine >= startOfSection){
+    menuElement.classList.add('active');
+  }
+}
 
 function toggleMenu() {
   body.classList.toggle('openedMenu');
@@ -21,10 +42,6 @@ function toggleMenu() {
   }
 }
 
-function onScroll() {  
-  headerOnScroll();
-  showBackToTopBtn();
-}
 
 function headerOnScroll(){  
   if(scrollY>0){
